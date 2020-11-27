@@ -1,0 +1,55 @@
+-recuperer un mot au hasard dans un fichier txt
+    param : fichier text
+    methode : slip le fichier texte dans une liste
+    et tirer aleatoirement un index pr avoir un mot 
+    ds la liste
+    sortie : mot
+
+-afficher la premiere lettre de ce mot et des _
+    param : mot du pendu
+    methode : afiche la première lettre avec print
+    affiche _ tant qu'il reste des lettres ds le mot
+    tipps : creer un mot d'affichage qui contient les _
+    sortie : le mot d'affichage
+
+-afficher une lettre qui a été bien trouver
+    param : le mot et la lettre 
+    methode : recuperer l'indice de chaque emplacement de cet 
+    lettre dans le mot et remplacer le unerscore correspondant
+    par la lettre puis re afficher le mot
+    sortie : le mot d'affichage
+
+-permettre au joueur d'entrer une lettre pr la tester
+    -condition uniquement une nouvelle lettre
+        param : lettre
+        methode : liste de lettre proposé, si elle 
+        y est deja cest false sinn cest true et on
+        l'ajoute
+        sortie : True/False
+    param : le mot du pendu
+    methode : si la lettre est ds le mot 
+    l'afficher(avec une fonction)
+    sinn retirer un point de vie (8vie)
+    sortie : rien je pense
+
+-tu veux rejouer?
+    param : aucun je pense
+    methode : input demandant oui ou non
+    si oui appel de la fonction global pr jouer 
+    sinn fin 
+
+-retenir le meilleur score des partis de jouées
+
+
+Fonctionnement du programme principal:
+
+le programme ce lance
+debut du jeu
+    on trouve un mot aleatoire
+    on l'affiche correctement
+    tant que le joueur a de la vie il peut jouer
+        cad entrer des lettres
+    qd il n'a plus de vie on lui demande s'il veut rejouer
+    si oui on relance le jeu 
+    sinn fin  du jeu
+
