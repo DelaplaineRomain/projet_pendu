@@ -10,6 +10,34 @@ To do : rien
 
 import random as rd
 
+#fonction qui trie le fichier pour le mettre dans le bon ordre
+"""param : fichier.txt / sortie : le fichier trié"""
+
+# def fTri (pFichier):
+#     fichier = open(pFichier,"r")
+#     liste_1 = []
+#     for ligne in fichier :
+#             ligne = ligne.strip()
+#             if ligne :
+#                 liste.append(ligne)
+#     fichier.close()
+#     fichier = open(pFichier, "w")
+#     liste_2 = []
+#     sorted(liste, key=len)
+#     for i,val in enumerate(liste_1):
+#         size = len(val)
+#         if size < len(liste_1[i+1]):
+#             liste_2.append(val)
+#         else :
+
+        
+        
+#     for val in liste:
+#         fichier.write(val + "\n")
+#         print(val)
+#     fichier.close()
+#     return fichier
+
 #fonction qui récupère un mot random
 """param : fichier.txt / sortie : le mot"""
 
@@ -56,7 +84,7 @@ def fPresence_lettre (pLettre,pListe_lettre) :
     return rep
 
 #fonction qui demande au joueur d'entrer une lettre pr la tester
-"""param : mot du pendu,mot_affichage,vie / sortie : vie"""
+"""param : mot du pendu,mot_affichage,vie / sortie : true false en fct de la presence et le mot a afficher"""
 
 def fTest_lettre (pLettre,pListe_lettre,pMot,pMot_affichage) :
     succes = True
@@ -90,3 +118,26 @@ def fRejouer ():
     else :
         return True
 
+#fonction qui calcule le nouveau score
+"""param : ancien score / sortie : nouveau score"""
+
+def fUp_score (pScore,pFichier):
+    fichier = open(pFichier,"w")
+    pScore += 1
+    fichier.write(str(pScore))
+    fichier.close()
+    return pScore
+
+#fonction qui calcule le nouveau score
+"""param : fichier de score / sortie : score"""
+
+def fGet_score (pFichier):
+    fichier = open(pFichier)
+    liste = []
+    for ligne in fichier :
+        ligne = ligne.strip()
+        if ligne :
+            liste.append(ligne)
+    score = liste[0]
+    fichier.close()
+    return score

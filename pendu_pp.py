@@ -10,7 +10,7 @@ To do : rien
 import librairie_pendu as lib
 
 volonte = True
-point = 0
+point = lib.fGet_score("score.txt")
 
 while volonte == True :
     vie = 8
@@ -22,7 +22,7 @@ while volonte == True :
         print ("votre vie :",vie)
         print (mot_affichage)
         lettre = input("veuillez choisir une lettre:")
-        succes,mot_affichage = lib.fTest_lettre(lettre,liste_lettre,mot,mot_affichage)     #a modifier 
+        succes,mot_affichage = lib.fTest_lettre(lettre,liste_lettre,mot,mot_affichage)
         if not succes :
             vie -= 1
         resultat = lib.fVictoire (mot.lower(),mot_affichage.lower())
@@ -30,7 +30,7 @@ while volonte == True :
         print ("vous avez perdu")
     elif resultat == True :
         print ("vous avez gagné")
-        point += 1
+        point = lib.fUp_score(int(point),"score.txt")
     volonte = lib.fRejouer()
 
 print ("Nombre de point",point)
