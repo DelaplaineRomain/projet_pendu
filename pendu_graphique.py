@@ -67,7 +67,6 @@ def dessin_8 ():
     canevas.create_line(x3[0],x3[1],y3[0],y3[1],z3[0],z3[1],fill='green',width='4')
 
 def fDraw (pVie) :
-    print(pVie)
     if pVie == 8:
         dessin_1()
     elif pVie == 7:

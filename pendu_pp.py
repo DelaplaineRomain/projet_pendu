@@ -103,7 +103,6 @@ if choix.isdigit() :
             canevas.create_line(x3[0],x3[1],y3[0],y3[1],z3[0],z3[1],fill='green',width='4')
 
         def fDraw (pVie) :
-            print(pVie)
             if pVie == 8:
                 dessin_1()
             elif pVie == 7:
@@ -143,9 +142,9 @@ if choix.isdigit() :
             global point
             global i
             lettre = saisie.get()
-            validite = pendu.fValidite_saisie(lettre)
+            validite = lib.fValidite_saisie(lettre)
             if validite :
-                test , mot_cache = pendu.fTest_lettre(lettre, liste_lettre,mot,mot_cache)
+                test , mot_cache = lib.fTest_lettre(lettre, liste_lettre,mot,mot_cache)
                 label2.set(",".join(liste_lettre))
                 if not test :
                     fDraw(ma_vie)
@@ -154,9 +153,9 @@ if choix.isdigit() :
                         label2.set("Vous avez perdu ...\n Le mot été : "+mot)
                         i = 0
                         bouton_val.set("Rejouer")
-                elif pendu.fVictoire(mot,mot_cache):
+                elif lib.fVictoire(mot,mot_cache):
                     label2.set("Vous avez gagné !!!\n Le mot été : "+mot)
-                    point = pendu.fUp_score(int(point),"score.txt")
+                    point = lib.fUp_score(int(point),"score.txt")
                     i = 0
                     bouton_val.set("Rejouer")
             else :

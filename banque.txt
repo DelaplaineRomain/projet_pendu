@@ -27,7 +27,6 @@ Fado
 Faux
 Assez
 Avion
-Awalé
 Balai
 Banjo
 Barbe
@@ -38,3 +37,4 @@ Cache
 Capot
 Carte
 Chien
+Awalé
