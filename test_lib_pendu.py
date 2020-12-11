@@ -5,7 +5,7 @@
 test de la librairie pour le pendu
 Fait par Delaplaine Romain
 27/11/2020
-To do : test plus particulier pr voir les cas limite
+To do : faire des test plus particulier pr voir les cas limite
 """
 
 import librairie_pendu as pendu
