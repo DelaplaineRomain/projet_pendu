@@ -115,11 +115,11 @@ def fTest_lettre ():
             fDraw(ma_vie)
             ma_vie -= 1
             if ma_vie == 0 :
-                label2.set("Vous avez perdu ...")
+                label2.set("Vous avez perdu ...\n Le mot été : "+mot)
                 i = 0
                 bouton_val.set("Rejouer")
         elif pendu.fVictoire(mot,mot_cache):
-            label2.set("Vous avez gagné !!!")
+            label2.set("Vous avez gagné !!!\n Le mot été : "+mot)
             point = pendu.fUp_score(int(point),"score.txt")
             i = 0
             bouton_val.set("Rejouer")

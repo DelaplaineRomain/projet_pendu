@@ -34,8 +34,10 @@ while volonte == True :
             print("Saisie incorrect")
     if vie == 0 :
         print ("vous avez perdu")
+        print ("le mot été :",mot)
     elif resultat == True :
         print ("vous avez gagné")
+        print ("le mot été :",mot)
         point = lib.fUp_score(int(point),"score.txt")
     volonte = lib.fRejouer()
 
