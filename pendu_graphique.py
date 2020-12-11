@@ -5,7 +5,7 @@
 Librairie pour le pendu
 Fait par Delaplaine Romain
 11/12/2020
-To do : tout
+To do : rien
 """
 
 # Ici je fais mes imports
