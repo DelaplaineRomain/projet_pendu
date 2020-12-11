@@ -13,30 +13,31 @@ import random as rd
 #fonction qui trie le fichier pour le mettre dans le bon ordre
 """param : fichier.txt / sortie : le fichier trié"""
 
-# def fTri (pFichier):
-#     fichier = open(pFichier,"r")
-#     liste_1 = []
-#     for ligne in fichier :
-#             ligne = ligne.strip()
-#             if ligne :
-#                 liste.append(ligne)
-#     fichier.close()
-#     fichier = open(pFichier, "w")
-#     liste_2 = []
-#     sorted(liste, key=len)
-#     for i,val in enumerate(liste_1):
-#         size = len(val)
-#         if size < len(liste_1[i+1]):
-#             liste_2.append(val)
-#         else :
-
-        
-        
-#     for val in liste:
-#         fichier.write(val + "\n")
-#         print(val)
-#     fichier.close()
-#     return fichier
+def fTri (pFichier):
+    fichier = open(pFichier,"r")
+    liste_1 = []
+    for ligne in fichier :
+            ligne = ligne.strip()
+            if ligne :
+                liste_1.append(ligne)
+    dico = {}
+    liste_2 = []
+    sorted(liste_1, key=len)
+    for val in liste_1:
+        size = len(val)
+        if size not in dico.keys() :
+            dico[size] = [val]
+        elif val not in dico[size] :
+            dico[size].append(val)
+    for i in dico.keys() :
+        liste_tri = sorted(dico[i])
+        liste_2.extend(liste_tri)    
+    fichier.close()
+    fichier = open(pFichier, "w")        
+    for val in liste_2:
+        fichier.write(val + "\n")
+    fichier.close()
+    return fichier
 
 #fonction qui récupère un mot random
 """param : fichier.txt / sortie : le mot"""
@@ -141,3 +142,12 @@ def fGet_score (pFichier):
     score = liste[0]
     fichier.close()
     return score
+
+#fonction pour verifier la saisie de l'utilisateur
+"""param : entre / sortie : true ou false"""
+
+def fValidite_saisie (pEntre):
+    rep = False
+    if len(pEntre) == 1 :
+        rep = True 
+    return rep

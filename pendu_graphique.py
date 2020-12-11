@@ -4,13 +4,13 @@
 """
 Librairie pour le pendu
 Fait par Delaplaine Romain
-10/12/2020
+11/12/2020
 To do : tout
 """
 
 # Ici je fais mes imports
 
-import tkinter as tkinter
+import tkinter
 import librairie_pendu as pendu
 
 # Mes fonctions spécifiques à tkinter
@@ -107,20 +107,24 @@ def fTest_lettre ():
     global point
     global i
     lettre = saisie.get()
-    test , mot_cache = pendu.fTest_lettre(lettre, liste_lettre,mot,mot_cache)
-    label2.set(",".join(liste_lettre))
-    if not test :
-        fDraw(ma_vie)
-        ma_vie -= 1
-        if ma_vie == 0 :
-            label2.set("Vous avez perdu ...")
+    validite = pendu.fValidite_saisie(lettre)
+    if validite :
+        test , mot_cache = pendu.fTest_lettre(lettre, liste_lettre,mot,mot_cache)
+        label2.set(",".join(liste_lettre))
+        if not test :
+            fDraw(ma_vie)
+            ma_vie -= 1
+            if ma_vie == 0 :
+                label2.set("Vous avez perdu ...")
+                i = 0
+                bouton_val.set("Rejouer")
+        elif pendu.fVictoire(mot,mot_cache):
+            label2.set("Vous avez gagné !!!")
+            point = pendu.fUp_score(int(point),"score.txt")
             i = 0
             bouton_val.set("Rejouer")
-    elif pendu.fVictoire(mot,mot_cache):
-        label2.set("Vous avez gagné !!!")
-        point = pendu.fUp_score(int(point),"score.txt")
-        i = 0
-        bouton_val.set("Rejouer")
+    else :
+        label2.set("Saisie incorrect \n" + ",".join(liste_lettre))
     label1.set(mot_cache)
     champ.delete(0, "end")
 
@@ -186,6 +190,7 @@ tkinter.Label(frame2, text = "Votre score :" , bg = "grey").grid(row = 2 , colum
 # code principal
 
 i = 0
+pendu.fTri("banque.txt")
 
 # Je lance ma fenetre
 

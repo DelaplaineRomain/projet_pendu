@@ -1,3 +1,5 @@
+Découpage fonctionnel (piste pour commencer)
+
 -recuperer un mot au hasard dans un fichier txt
     param : fichier text
     methode : slip le fichier texte dans une liste
@@ -53,3 +55,16 @@ debut du jeu
     si oui on relance le jeu 
     sinn fin  du jeu
 
+
+Lien git : https://github.com/DelaplaineRomain/projet_pendu.git
+
+Précision sur les fichiers : 
+
+Le fichier score enregistre le score et prend en fin de partie le score mis à jour.
+
+Le fichier banque est la banque dans laquelle un mot seras choisis aléatoirement, le fichier backup est un 
+fichier pour piocher des mots et refaire facilement des tests sur banque si jamais on suprrime son contenu.
+
+Pour lancer la version console ou graphique il faut lancer le fichier pendu correspondant (pour tester chaque version séparement).
+
+En lancant pendu.pp il est possible de choisir si l'on veut jouer en version console ou en version graphique
